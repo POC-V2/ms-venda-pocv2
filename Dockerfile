@@ -1,4 +1,4 @@
-FROM maven:3.6.0-jdk-11-slim AS build
+FROM maven:3.6.3-openjdk-15-slim AS build
 WORKDIR /build
 
 COPY . .
@@ -6,7 +6,7 @@ COPY . .
 RUN mvn -f pom.xml clean package 
 
 # Release Image
-FROM openjdk:11-jre AS release
+FROM adoptopenjdk:15.0.2_7-jre-hotspot-focal AS release
 COPY --from=build /build/target/*.jar /app.jar
 
 COPY docker-entrypoint.sh /
