@@ -18,7 +18,7 @@ public class CupomExternalApi {
 
     public BigDecimal getDescontoByCupom(@NotNull String cupom) {
         Objects.requireNonNull(cupom, "Código do cupom não pode ser nulo");
-        String url = "http://ms-cupom.production.svc.cluster.local:30337/" + cupom;
+        String url = "http://ms-cupom.production.svc.cluster.local:8083/" + cupom;
         return restTemplate.getForObject(url, BigDecimal.class);
     }
 
