@@ -1,5 +1,6 @@
 package com.pocms.vendas.external;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -10,6 +11,9 @@ import java.util.Objects;
 @Component
 public class CupomExternalApi {
 
+    @Value("${uri_svc_cupom}")
+    public String uri_svc_cupom;
+
     private final RestTemplate restTemplate;
 
     public CupomExternalApi(RestTemplate restTemplate) {
@@ -18,7 +22,7 @@ public class CupomExternalApi {
 
     public BigDecimal getDescontoByCupom(@NotNull String cupom) {
         Objects.requireNonNull(cupom, "Código do cupom não pode ser nulo");
-        String url = "http://ms-cupom.production.svc.cluster.local:8083/" + cupom;
+        String url = this.uri_svc_cupom + cupom;
         return restTemplate.getForObject(url, BigDecimal.class);
     }
 
