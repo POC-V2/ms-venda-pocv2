@@ -112,6 +112,12 @@
             <artifactId>opentracing-spring-rabbitmq-starter</artifactId>
             <version>3.0.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>io.opentracing.contrib</groupId>
+            <artifactId>opentracing-spring-cloud-jdbc-starter</artifactId>
+            <version>0.5.9</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
