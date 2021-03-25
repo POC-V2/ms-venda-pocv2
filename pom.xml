@@ -11,7 +11,7 @@
 
     <groupId>com.pocms</groupId>
     <artifactId>vendas</artifactId>
-    <version>1.0</version>
+    <version>11.0</version>
     <name>vendas</name>
 
     <properties>
@@ -103,20 +103,14 @@
 
         <dependency>
             <groupId>io.opentracing.contrib</groupId>
-            <artifactId>opentracing-spring-jaeger-web-starter</artifactId>
-            <version>3.3.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.opentracing.contrib</groupId>
-            <artifactId>opentracing-spring-rabbitmq-starter</artifactId>
-            <version>3.0.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.opentracing.contrib</groupId>
-            <artifactId>opentracing-spring-cloud-jdbc-starter</artifactId>
+            <artifactId>opentracing-spring-cloud-starter</artifactId>
             <version>0.5.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.opentracing.contrib</groupId>
+            <artifactId>opentracing-spring-jaeger-cloud-starter</artifactId>
+            <version>3.3.1</version>
         </dependency>
     </dependencies>
 
@@ -147,7 +141,7 @@
                         <image>openjdk:15-jdk-slim-buster</image>
                     </from>
                     <to>
-                        <image>poc-ms/vendas:${version}</image>
+                        <image>592268041915.dkr.ecr.us-east-1.amazonaws.com/ms-venda:${version}</image>
                     </to>
                     <container>
                         <mainClass>com.pocms.vendas.VendasApplication</mainClass>
