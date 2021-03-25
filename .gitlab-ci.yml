@@ -13,7 +13,7 @@ before_script:
   - python3 get-pip.py
   - pip install --upgrade pip six awscli awsebcli cryptography
   - aws ecr
-  -
+
 services:
 - docker:dind
 
